@@ -16,7 +16,7 @@ export const useAuthStore = defineStore('auth', {
     },
     setEmail(email: string) {
       this.email = email;
-      localStorage.setItem('email', email); // ✅ persist email
+      localStorage.setItem('email', email); //persist email
     },
     logout() {
       this.token = ''
@@ -28,9 +28,7 @@ export const useAuthStore = defineStore('auth', {
         const res = await api.post('/api/auth/login', { email, password });
         this.setToken(res.data.token);
         this.setEmail(email);
-        console.log('✅ Login successful:', email)
       } catch (err) {
-        console.error('❌ Login failed:', err)
         throw err
       }
     },

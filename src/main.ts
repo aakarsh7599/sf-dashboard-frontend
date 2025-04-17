@@ -11,7 +11,7 @@ const app = createApp(App)
 const pinia = createPinia()
 app.use(pinia)
 
-// ✅ Restore token from localStorage before using router
+//Restore token from localStorage before using router
 const token = localStorage.getItem('token')
 if (token) {
   api.defaults.headers.common['Authorization'] = `Bearer ${token}`
