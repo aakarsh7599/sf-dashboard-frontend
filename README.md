@@ -7,7 +7,7 @@ This is the frontend component of the Salesforce Dashboard application. It enabl
 Frontend: [https://sdb-frontend.onrender.com](https://sdb-frontend.onrender.com)  
 Backend: [https://sf-dashboard-backend.onrender.com](https://sf-dashboard-backend.onrender.com)
 
-## Technologies Used
+## Tech Stack
 
 - **Vue 3 + Vite** 
 - **TypeScript** 
