@@ -7,15 +7,6 @@ This is the frontend component of the Salesforce Dashboard application. It enabl
 Frontend: [https://sdb-frontend.onrender.com](https://sdb-frontend.onrender.com)  
 Backend: [https://sf-dashboard-backend.onrender.com](https://sf-dashboard-backend.onrender.com)
 
-## Tech Stack
-
-- **Vue 3 + Vite** 
-- **TypeScript** 
-- **Pinia** – Store for managing user authentication state
-- **Axios** – API client with interceptor support
-- **Vue Router** – Handles public and protected routes
-
-
 ## Features
 
 - Login and registration flow with JWT integration
@@ -23,6 +14,13 @@ Backend: [https://sf-dashboard-backend.onrender.com](https://sf-dashboard-backen
 - Paginated display of Salesforce Account records
 - Axios interceptors to inject auth headers and handle errors
 
+## Tech Stack
+
+- **Vue 3 + Vite** 
+- **TypeScript** 
+- **Pinia** – Store for managing user authentication state
+- **Axios** – API client with interceptor support
+- **Vue Router** – Handles public and protected routes
 
 ## Project Structure
 
