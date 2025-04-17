@@ -2,7 +2,10 @@
 
 This is the frontend component of the Salesforce Dashboard application. It enables user authentication and displays Salesforce account data in a paginated and protected dashboard UI.
 
----
+## Live Demo
+
+Frontend: [https://sdb-frontend.onrender.com](https://sdb-frontend.onrender.com)  
+Backend: [https://sf-dashboard-backend.onrender.com](https://sf-dashboard-backend.onrender.com)
 
 ## Technologies Used
 
@@ -12,7 +15,6 @@ This is the frontend component of the Salesforce Dashboard application. It enabl
 - **Axios** – API client with interceptor support
 - **Vue Router** – Handles public and protected routes
 
----
 
 ## Features
 
@@ -20,7 +22,7 @@ This is the frontend component of the Salesforce Dashboard application. It enabl
 - Route protection for dashboard pages
 - Paginated display of Salesforce Account records
 - Axios interceptors to inject auth headers and handle errors
----
+
 
 ## Project Structure
 
@@ -35,9 +37,14 @@ src/
 └── main.ts           # Entry point
 ```
 
----
-
 ## Architecture Overview
+
+```
+Frontend (Vue + Pinia) → Axios → Express Backend
+                          └── /auth/register -> Prisma (PostgreSQL)
+                          └── /auth/login -> Prisma (PostgreSQL)
+                          └── /dashboard - (JWT protected) -> Salesforce via jsforce                                     
+```
 
 ### 1. Authentication Flow
 
@@ -64,7 +71,6 @@ src/
 - Injects `Authorization: Bearer <token>` header into every request (request interceptor).
 - Centralized error logging and retry logic support if needed (response interceptor).
 
----
 
 ## API Integration
 
@@ -108,17 +114,12 @@ npm run dev
    VITE_API_BASE_URL="Insert Backend URL"
    ```
 
----
 
 ## Challenges faced
 
 - Loss of JWT token in the pinia store during page refresh. 
 Previously, I've fetched token from pinia store in the axios request interceptor and later realised that a page refresh clears the pinia store. Updated logic to fetch directly from the local storage. (Similarly in route guard)
 
----
-
-## Live Demo
-
-Frontend: [https://sdb-frontend.onrender.com](https://sdb-frontend.onrender.com)  
-Backend: [https://sf-dashboard-backend.onrender.com](https://sf-dashboard-backend.onrender.com)
+## Note
+Current CSS doesn't support dark mode.
 
