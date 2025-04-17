@@ -76,6 +76,25 @@ The frontend communicates with the following backend routes:
 | POST   | `/api/auth/register`| Register new user        |
 | GET    | `/api/dashboard`    | Fetch Salesforce accounts|
 
+## Deployment (Local)
+1. **Clone the repository**
+
+```bash
+git clone repoURL
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+3. **Run the server in dev mode**
+
+```bash
+npm run dev
+```
+
+
 ## Deployment (Render)
 
 1. Push code to GitHub
